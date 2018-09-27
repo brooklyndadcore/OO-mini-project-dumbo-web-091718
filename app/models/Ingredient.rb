@@ -1,7 +1,7 @@
 
 class Ingredient
   attr_reader :name
-  @@all << self
+  @@all = []
 
   def initialize(name)
     @name = name
