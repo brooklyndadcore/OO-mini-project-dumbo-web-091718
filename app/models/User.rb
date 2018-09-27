@@ -1,5 +1,5 @@
 #
-class USER
+class User
   attr_reader :name
   attr_accessor :recipe_card
   @@all = []
@@ -13,12 +13,12 @@ class USER
     @@all
   end
 
-  def declare_allergen(allergy)
-    Allergy.new(allergy, self)
+  def declare_allergen(allergy_ingredient)
+    Allergen.new(allergy_ingredient, self)
   end
 
   def allergens
-    Allergy.all.select {|allergy| allergy.user == self}
+    Allergen.all.select {|allergy| allergy.user == self}
   end
 
   def add_recipe_card(recipe, date, rating)

@@ -22,5 +22,8 @@ class Recipe
   def add_ingredients(ingredient_arr)
   end
 
+  def users
+    RecipeCard.all.select {|card| card.recipe == self}
+  end
 
 end
