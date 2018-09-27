@@ -6,7 +6,7 @@ class Allergen
   def initialize(ingredient, user)
     @ingredient = ingredient
     @user = user
-    ingredient.allergy_count += 1
+    ingredient.count += 1
     @@all << self
   end
 

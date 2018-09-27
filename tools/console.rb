@@ -27,10 +27,14 @@ baking_soda = Ingredient.new("baking soda")
 yeast = Ingredient.new("yeast")
 water = Ingredient.new("water")
 milk = Ingredient.new("milk")
+noodles = Ingredient.new("noodles")
+cheese = Ingredient.new("cheese")
+sauce = Ingredient.new("sauce")
 
 bread.add_ingredients([yeast, flour, salt, water])
 cookies.add_ingredients([egg, flour, salt, sugar, butter])
 brownies.add_ingredients([egg, flour, salt, milk, butter, sugar])
+lasagna.add_ingredients([noodles, cheese, sauce])
 
 sarah.add_recipe_card(cookies, 20180101, 6)
 sarah.add_recipe_card(cookies, 20180101, 6)
@@ -47,7 +51,9 @@ jenny.declare_allergen(milk)
 sarah.declare_allergen(milk)
 
 # p Allergen.all
-p cookies.allergens
+cookies.allergens
+
+sarah.safe_recipes
 
 
 # binding.pry

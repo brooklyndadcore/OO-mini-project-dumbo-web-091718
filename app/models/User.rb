@@ -35,8 +35,13 @@ class User
   end
 
   def most_recent_recipe
-  date_arr = self.recipes.sort_by {|recipe| recipe.date }
-  date_arr[-1]
+    date_arr = self.recipes.sort_by {|recipe| recipe.date }
+    date_arr[-1]
+  end
+
+  def safe_recipes
+    allergy_arr = self.allergens.collect {|item| item.ingredient.name }.uniq
+    
   end
 
 end
