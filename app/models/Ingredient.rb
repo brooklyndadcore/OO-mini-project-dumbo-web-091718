@@ -5,6 +5,7 @@ class Ingredient
 
   def initialize(name)
     @name = name
+    @allergy_count = 0
     @@all << self
   end
 
@@ -13,7 +14,7 @@ class Ingredient
   end
 
   def self.most_common_allergen
-    Allergen.all.sort_by {|allergy|[allergy.ingredient, allergy.user]}
+    @@all.sort_by{|allergen| allergen.allergy_count}[-1]
   end
 
 end
