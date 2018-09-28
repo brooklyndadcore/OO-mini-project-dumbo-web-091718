@@ -39,9 +39,26 @@ class User
     date_arr[-1]
   end
 
+  def allergy_test(allergies, recipe)
+    # binding.pry
+    allergies.each do |a_item|
+      if recipe.include?(a_item) == true
+        return false
+      end
+    end
+    return true
+  end
+
   def safe_recipes
-    allergy_arr = self.allergens.collect {|item| item.ingredient.name }.uniq
-    
+    safe_arr = []
+    allergies = self.allergens.collect {|item| item.ingredient }.uniq
+    Recipe.all.each do |recipe|
+      # binding.pry
+      if allergy_test(allergies, recipe.ingredient) == true
+        safe_arr << recipe
+      end
+    end
+    safe_arr
   end
 
 end

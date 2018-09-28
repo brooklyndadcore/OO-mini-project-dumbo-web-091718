@@ -28,7 +28,7 @@ class Recipe
   end
 
   def ingredients
-    self.ingredient.select{|item| item.name}
+    self.ingredient.collect {|item| item.name }
   end
 
   def allergens

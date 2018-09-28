@@ -12,7 +12,6 @@ jenny = User.new("jenny")
 sarah = User.new("sarah")
 
 cookies = Recipe.new("cookies")
-brownies = Recipe.new("brownies")
 lasagna = Recipe.new("lasagna")
 bread = Recipe.new("bread")
 brownies = Recipe.new("brownies")
@@ -41,7 +40,7 @@ sarah.add_recipe_card(cookies, 20180101, 6)
 sarah.add_recipe_card(brownies, 20180101, 6)
 sarah.add_recipe_card(bread, 20180101, 6)
 sarah.add_recipe_card(bread, 20180101, 6)
-sarah.add_recipe_card(brownies, 20180101, 6)
+sarah.add_recipe_card(brownies, 20180201, 5)
 sarah.add_recipe_card(cookies, 20180101, 6)
 
 sarah.declare_allergen(sugar)
@@ -51,9 +50,15 @@ jenny.declare_allergen(milk)
 sarah.declare_allergen(milk)
 
 # p Allergen.all
-cookies.allergens
 
-sarah.safe_recipes
 
+# p lasagna.ingredients
+# p brownies.ingredients
+# p cookies.ingredients
+# p bread.ingredients
 
 # binding.pry
+
+# sarah.safe_recipes
+
+binding.pry

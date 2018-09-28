@@ -1,12 +1,12 @@
 
 class Ingredient
-  attr_accessor :count
+  attr_accessor :allergy_count
   attr_reader :name
   @@all = []
 
   def initialize(name)
     @name = name
-    @count = 0
+    @allergy_count = 0
     @@all << self
   end
 
@@ -15,7 +15,7 @@ class Ingredient
   end
 
   def self.most_common_allergen
-    @@all.sort_by{|allergen| allergen.count}[-1]
+    @@all.sort_by{|allergen| allergen.allergy_count}[-1]
   end
 
 end
